@@ -95,7 +95,7 @@ body {
 
 .card {
   background-color: rgb(255, 0, 255);
-  width: 200px;
+  width: 230px;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -141,4 +141,14 @@ body {
     margin-top: 40px;
     border: 1px black;
 
+}
+.buttonmaharaj{
+  height: 40px;
+  background-color: rgb(255, 0, 255);
+  width:150px ;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: 30px;
 }
