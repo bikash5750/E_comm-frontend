@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "./style.css";
 // create card
-function Card( props) {
+function Card(props) {
   return (
-    <div style={{ border: "2px solid black", padding: "10px", width: "220px" }}>
+    <div className="card" style={{border:"1px solid black", padding:"2px"}}>
       <img
         src="https://i.pinimg.com/474x/21/75/b4/2175b4382bbae6eb2a240e1cff127b69.jpg"
         height="200"
@@ -12,11 +12,10 @@ function Card( props) {
         alt="T-Shirt"
       />
 
-      <div style={{ textAlign: "center" }}>
-        <h2>{props.cloth}</h2>
-        <h2>{props.offer}</h2>
-        <h2>Shop Now</h2>
-      </div>
+      <h2>{props.cloth}</h2>
+      <h2>{props.offer}</h2>
+
+      <button className="shop-btn">Shop Now</button>
     </div>
   );
 }
@@ -50,35 +49,65 @@ const products = [
 ];
 
 
+const Header = () => {
+  return (
+  <div className="heading" >
 
+      <img
+        className="images"
+        src="https://images.seeklogo.com/logo-png/35/1/myntra-logo-png_seeklogo-355038.png"
+        alt="Myntra Logo"
+        width="80px"
+        height="80px"
+      />
+
+      <div className="options">
+        <button className="but">MEN</button>
+        <button className="but">WOMEN</button>
+        <button className="but">KIDS</button>
+        <button className="but">HOME AND LIVING</button>
+        <button className="but">BEAUTY</button>
+        <button className="but">STUDIO</button>
+      </div>
+
+      <input
+        type="text"
+        className="searchbar"
+        placeholder="Search for products, brands and more"
+      />
+
+      <div className="profile-section">
+        <button className="pro">Profile</button>
+        <button className="pro">Wishlist</button>
+        <button className="pro">Bag</button>
+      </div>
+
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div style={{display:"flex", gap:"20px" , flexWrap:"wrap"}}>
-      {/* header */}
+    <>
+      <Header />
 
+      {/* body */}
+      <div className="middle" style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+        {
+          products.map((item) => (
+            <Card
+              key={item.id}
+              cloth={item.cloth}
+              offer={item.offer}
+            />
+          ))
+        }
 
-
-
-      //cards
-     {
-         products.map((item) => (
-          <Card       // this reutun card
-            key={item.id}
-            cloth={item.cloth}
-            offer={item.offer}
-         />
-        ))
-     }
-
-
-
-
-      {/* footer */}
-    </div>
+        {/* footer */}
+      </div>
+    </>
   );
 }
-
 
 
 
