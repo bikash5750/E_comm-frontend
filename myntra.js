@@ -110,6 +110,10 @@ function App() {
     const sorted = [...arr].sort((a, b) => a.price - b.price);
     setarr(sorted);
   }
+  function filterprice(){
+   const arr2 = products.filter((value)=>value.price>499)
+   setarr(arr2)
+  }
 
   return (
     <>
@@ -117,6 +121,9 @@ function App() {
 
       <button className="buttonmaharaj" onClick={sortarray}>
         Sort by Price
+      </button>
+       <button className="buttonmaharaj" onClick={filterprice}>
+        filter by price
       </button>
 
       <div className="middle" style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
