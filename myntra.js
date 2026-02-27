@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css";
+
+
 // create card
 function Card(props) {
   return (
@@ -86,6 +88,18 @@ const Header = () => {
   );
 };
 
+
+function Footer(){
+  return(
+    <img
+    src="https://imgs.search.brave.com/ke3a5NCwd2iJCI8b3b1thskYYadtxBN__t6S0Vnsoac/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/MjgwMzE4NTcvZmls/ZS9vcmlnaW5hbC00/MmY0NGE5OGY1OTU2/ODcyMDg4YzIyYzhi/NjE1NDk3NC5wbmc_/Zm9ybWF0PXdlYnAm/cmVzaXplPTQwMHgz/MDAmdmVydGljYWw9/Y2VudGVy"
+    width="1100px"
+    height="300px"
+    className="footerimg"
+
+    />
+  )
+}
 function App() {
   return (
     <>
@@ -103,8 +117,9 @@ function App() {
           ))
         }
 
-        {/* footer */}
+        
       </div>
+      <Footer/>
     </>
   );
 }
